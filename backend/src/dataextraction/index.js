@@ -26,7 +26,7 @@ const htmlTemplate = `
 <h3>Please go to the Vaccine Center and get you and Your Family Vaccinated </h3>
 `;
 MailService.setApiKey(
-  "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"
+  process.env.api_key
 );
 const msg = {
   to: "priyadarship85@gmail.com", // Change to your recipient
