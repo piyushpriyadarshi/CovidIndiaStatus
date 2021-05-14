@@ -4,7 +4,7 @@ const { schedule } = nodeCron;
 import checkVaccineAvailability from "../vaccine/vaccine.js";
 const jobs = express.Router();
 
-jobs.vaccineJobs = schedule("*/1 * * * *", function () {
+jobs.vaccineJobs = schedule("*/4 * * * *", function () {
   console.log("Running Cron Job for " + new Date().toTimeString());
   checkVaccineAvailability();
 });

@@ -6,10 +6,11 @@ import MailService from "@sendgrid/mail";
 const sendMail = (toArr, result) => {
   generateMailBodyForVaccine(result)
     .then((data) => {
+      console.log(process.env.SENDGRID_API_KEY);
       MailService.setApiKey(process.env.SENDGRID_API_KEY);
       const msg = {
         to: toArr, // Change to your recipient
-        from: "priyadarship4@gmail.com", // Change to your verified sender
+        from: "priyadarship85@gmail.com", // Change to your verified sender
         subject: "Vaccine Notifier || Vaccine Available " + result[0].date,
         html: data,
       };

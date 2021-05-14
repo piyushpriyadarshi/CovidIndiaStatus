@@ -16,7 +16,7 @@ async function checkVaccineAvailability() {
   }
   if (finalResult.length > 0) {
     console.log("vaccine is available");
-    sendMail(["piyush@piyushpriyadarshi.com"], finalResult);
+    sendMail(["priyadarship4@gmail.com"], finalResult);
   } else {
     console.log("vaccine is Not  available for 1 week");
   }
@@ -33,7 +33,7 @@ async function checkAvailabilityForDate(result, date) {
     centers.forEach((center) => {
       let centerSessions = center.sessions;
       centerSessions.forEach((session) => {
-        if (session.available_capacity > 0 && session.min_age_limit === 45) {
+        if (session.available_capacity > 0 && session.min_age_limit === 18) {
           const data = {};
           data.address = center.address;
           data.name = center.name;
@@ -58,7 +58,7 @@ function addDaysToDate(date, days) {
 function generateOneWeekDate() {
   let datesArr = [];
   const todayDate = new Date();
-  for (let index = 0; index <= 7; index++) {
+  for (let index = 0; index <= 3; index++) {
     const date = addDaysToDate(todayDate, index);
     datesArr.push(date);
   }

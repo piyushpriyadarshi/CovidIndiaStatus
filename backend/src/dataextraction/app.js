@@ -60,9 +60,7 @@ function generateMailBodyForVaccine(finalResult) {
 }
 
 const htmlTemplate = generateMailBodyForVaccine(data);
-MailService.setApiKey(
-  "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"
-);
+MailService.setApiKey(process.env.SENDGRID_API_KEY);
 const msg = {
   to: "priyadarship85@gmail.com", // Change to your recipient
   from: "priyadarship4@gmail.com", // Change to your verified sender
